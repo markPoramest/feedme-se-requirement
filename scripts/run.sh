@@ -4,7 +4,7 @@ echo "Running McDonald's Order Management System..."
 echo ""
 
 (
-  # Create some normal orders
+  # Create normal orders
   echo "1"
   sleep 1
   echo "1"
@@ -12,7 +12,7 @@ echo ""
   echo "1"
   sleep 1
 
-  # Create some VIP orders
+  # Create VIP orders
   echo "2"
   sleep 1
   echo "2"

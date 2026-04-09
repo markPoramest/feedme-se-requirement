@@ -1,11 +1,11 @@
 package mcdonald
 
-func (m *McDonald) RemoveCookingBot() {
+func (m *McDonald) RemoveCookingBot() bool {
 	m.mu.Lock()
 	defer m.mu.Unlock()
 
 	if len(m.Bots) == 0 {
-		return
+		return false
 	}
 
 	removedBot := m.Bots[len(m.Bots)-1]
@@ -15,8 +15,9 @@ func (m *McDonald) RemoveCookingBot() {
 	if removedBot.IsProcessing {
 		logger.LogBotRemoved(removedBot.ID, "PROCESSING")
 		removedBot.StopChannel <- true
-		return
+		return true
 	}
 
 	logger.LogBotRemoved(removedBot.ID, "IDLE")
+	return false
 }

@@ -9,7 +9,7 @@ import (
 
 func TestNewMcDonald(t *testing.T) {
 	t.Run("should create a new McDonald instance", func(t *testing.T) {
-		mcd := mcdonald.NewMcDonald()
+		mcd := mcdonald.New()
 
 		assert.NotNil(t, mcd)
 	})

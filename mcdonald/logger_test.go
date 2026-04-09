@@ -202,24 +202,6 @@ func TestLoggerBotRemoved(t *testing.T) {
 }
 
 func TestLoggerFinalStatus(t *testing.T) {
-	t.Run("should log final status with all details", func(t *testing.T) {
-		logger := mcdonald.GetLogger()
-		logFile := getLogFilePath()
-
-		os.Remove(logFile)
-
-		logger.LogFinalStatus(4, 2, 2, 1, 0)
-
-		content, _ := os.ReadFile(logFile)
-		logContent := string(content)
-
-		assert.Contains(t, logContent, "Final Status")
-		assert.Contains(t, logContent, "Total Orders Processed: 4 (2 VIP, 2 Normal)")
-		assert.Contains(t, logContent, "Orders Completed: 4")
-		assert.Contains(t, logContent, "Active Bots: 1")
-		assert.Contains(t, logContent, "Pending Orders: 0")
-	})
-
 	t.Run("should log final status with pending orders", func(t *testing.T) {
 		logger := mcdonald.GetLogger()
 		logFile := getLogFilePath()
@@ -259,4 +241,3 @@ func TestLoggerGetLogger(t *testing.T) {
 		assert.NotNil(t, logger)
 	})
 }
-

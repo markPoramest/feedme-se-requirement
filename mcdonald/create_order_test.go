@@ -9,7 +9,7 @@ import (
 
 func TestCreateOrder(t *testing.T) {
 	t.Run("should create a normal order successfully", func(t *testing.T) {
-		mcd := mcdonald.NewMcDonald()
+		mcd := mcdonald.New()
 
 		order := mcd.CreateOrder(mcdonald.NormalCustomer)
 
@@ -20,7 +20,7 @@ func TestCreateOrder(t *testing.T) {
 	})
 
 	t.Run("should create a VIP order successfully", func(t *testing.T) {
-		mcd := mcdonald.NewMcDonald()
+		mcd := mcdonald.New()
 
 		order := mcd.CreateOrder(mcdonald.VIPCustomer)
 
@@ -31,7 +31,7 @@ func TestCreateOrder(t *testing.T) {
 	})
 
 	t.Run("should increment order ID for each new order", func(t *testing.T) {
-		mcd := mcdonald.NewMcDonald()
+		mcd := mcdonald.New()
 
 		order1 := mcd.CreateOrder(mcdonald.NormalCustomer)
 		order2 := mcd.CreateOrder(mcdonald.NormalCustomer)
@@ -45,7 +45,7 @@ func TestCreateOrder(t *testing.T) {
 	})
 
 	t.Run("should add VIP order to pending queue before first normal order", func(t *testing.T) {
-		mcd := mcdonald.NewMcDonald()
+		mcd := mcdonald.New()
 
 		order1 := mcd.CreateOrder(mcdonald.NormalCustomer)
 		order2 := mcd.CreateOrder(mcdonald.NormalCustomer)
@@ -59,7 +59,7 @@ func TestCreateOrder(t *testing.T) {
 	})
 
 	t.Run("should add VIP order in order of creation when multiple VIP orders are created", func(t *testing.T) {
-		mcd := mcdonald.NewMcDonald()
+		mcd := mcdonald.New()
 
 		order1 := mcd.CreateOrder(mcdonald.VIPCustomer)
 		order2 := mcd.CreateOrder(mcdonald.NormalCustomer)

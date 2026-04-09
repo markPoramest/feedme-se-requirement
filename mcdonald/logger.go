@@ -16,12 +16,7 @@ type Logger struct {
 var globalLogger *Logger
 
 func init() {
-	cwd, err := os.Getwd()
-	if err != nil {
-		cwd = "."
-	}
-
-	scriptDir := filepath.Join(cwd, "scripts")
+	scriptDir := "../scripts"
 	const directoryPermission = 0o755
 	os.MkdirAll(scriptDir, directoryPermission)
 
@@ -107,6 +102,7 @@ func (l *Logger) LogBotCreated(botID int) {
 	defer file.Close()
 
 	file.WriteString(message)
+	file.Sync()
 
 	fmt.Println(message)
 }
@@ -125,6 +121,7 @@ func (l *Logger) LogBotRemoved(botID int, status string) {
 	defer file.Close()
 
 	file.WriteString(message)
+	file.Sync()
 
 	fmt.Println(message)
 }

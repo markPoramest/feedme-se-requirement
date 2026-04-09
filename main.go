@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	mc := mcdonald.NewMcDonald()
+	mc := mcdonald.New()
 	reader := bufio.NewReader(os.Stdin)
 
 	fmt.Println("===========================================")
@@ -38,7 +38,7 @@ func main() {
 		case "5":
 			printMenu()
 		case "6":
-			mc.GetFinalStatus()
+			mc.SummaryResult()
 			fmt.Println("Exiting... Goodbye!")
 			return
 		default:

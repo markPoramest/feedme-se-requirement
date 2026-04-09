@@ -75,6 +75,8 @@ func (m *McDonald) cookOrder(bot *Bot, order *Order) {
 		bot.IsProcessing = false
 		bot.CurrentOrder = nil
 		m.mu.Unlock()
+
+		m.orderProcessed <- order
 	}
 }
 

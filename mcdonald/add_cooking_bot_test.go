@@ -9,7 +9,7 @@ import (
 
 func TestAddCookingBot(t *testing.T) {
 	t.Run("should create a single bot successfully", func(t *testing.T) {
-		mcd := mcdonald.NewMcDonald()
+		mcd := mcdonald.New()
 
 		mcd.AddCookingBot()
 		bots := mcd.GetBots()
@@ -20,7 +20,7 @@ func TestAddCookingBot(t *testing.T) {
 	})
 
 	t.Run("should create multiple bots with sequential IDs when add 3 bots", func(t *testing.T) {
-		mcd := mcdonald.NewMcDonald()
+		mcd := mcdonald.New()
 
 		mcd.AddCookingBot()
 		mcd.AddCookingBot()
@@ -35,7 +35,7 @@ func TestAddCookingBot(t *testing.T) {
 	})
 
 	t.Run("should assign pending order to idle bot when add bot", func(t *testing.T) {
-		mcd := mcdonald.NewMcDonald()
+		mcd := mcdonald.New()
 		mcd.CreateOrder(mcdonald.NormalCustomer)
 
 		pendingBefore := mcd.GetPendingOrders()
@@ -48,7 +48,7 @@ func TestAddCookingBot(t *testing.T) {
 	})
 
 	t.Run("should assign pending orders to idle bots when add multiple bots", func(t *testing.T) {
-		mcd := mcdonald.NewMcDonald()
+		mcd := mcdonald.New()
 
 		mcd.CreateOrder(mcdonald.NormalCustomer)
 		mcd.CreateOrder(mcdonald.NormalCustomer)

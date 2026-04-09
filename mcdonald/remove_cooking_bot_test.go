@@ -10,7 +10,7 @@ import (
 
 func TestRemoveCookingBot(t *testing.T) {
 	t.Run("should remove a bot when bots exist", func(t *testing.T) {
-		mcd := mcdonald.NewMcDonald()
+		mcd := mcdonald.New()
 
 		mcd.AddCookingBot()
 		assert.Equal(t, 1, len(mcd.GetBots()))
@@ -20,7 +20,7 @@ func TestRemoveCookingBot(t *testing.T) {
 	})
 
 	t.Run("should nothing happens when trying to remove a bot when no bots exist", func(t *testing.T) {
-		mcd := mcdonald.NewMcDonald()
+		mcd := mcdonald.New()
 
 		mcd.RemoveCookingBot()
 
@@ -28,7 +28,7 @@ func TestRemoveCookingBot(t *testing.T) {
 	})
 
 	t.Run("should remove the newest (last) bot", func(t *testing.T) {
-		mcd := mcdonald.NewMcDonald()
+		mcd := mcdonald.New()
 
 		mcd.AddCookingBot()
 		mcd.AddCookingBot()
@@ -43,7 +43,7 @@ func TestRemoveCookingBot(t *testing.T) {
 	})
 
 	t.Run("should remove idle bot successfully", func(t *testing.T) {
-		mcd := mcdonald.NewMcDonald()
+		mcd := mcdonald.New()
 
 		mcd.AddCookingBot()
 		bots := mcd.GetBots()
@@ -54,7 +54,7 @@ func TestRemoveCookingBot(t *testing.T) {
 	})
 
 	t.Run("should stop and return order when removing processing bot", func(t *testing.T) {
-		mcd := mcdonald.NewMcDonald()
+		mcd := mcdonald.New()
 		order1 := mcd.CreateOrder(mcdonald.NormalCustomer)
 
 		mcd.AddCookingBot()
@@ -72,7 +72,7 @@ func TestRemoveCookingBot(t *testing.T) {
 	})
 
 	t.Run("should order back to original position when removing processing bot", func(t *testing.T) {
-		mcd := mcdonald.NewMcDonald()
+		mcd := mcdonald.New()
 
 		order1 := mcd.CreateOrder(mcdonald.NormalCustomer)
 		order2 := mcd.CreateOrder(mcdonald.NormalCustomer)

@@ -1,24 +1,9 @@
-[10:05:50] Created normal Order #1 - Status: PENDING
-[10:05:52] Created vip Order #2 - Status: PENDING
-[10:05:54] Created normal Order #3 - Status: PENDING
-[10:05:55] Created vip Order #4 - Status: PENDING
-[10:05:57] Bot #1 created - Status: ACTIVE
-[10:05:57] Bot #1 picked up vip Order #2 - Status: PROCESSING
-[10:05:59] Bot #2 created - Status: ACTIVE
-[10:05:59] Bot #2 picked up vip Order #4 - Status: PROCESSING
-[10:06:03] Bot #3 created - Status: ACTIVE
-[10:06:03] Bot #3 picked up normal Order #1 - Status: PROCESSING
-[10:06:06] Bot #4 created - Status: ACTIVE
-[10:06:06] Bot #4 picked up normal Order #3 - Status: PROCESSING
-[10:06:07] Order ID #2 for vip customer completed by Bot #1 in 10 seconds - Status: COMPLETE
-[10:06:08] Bot #5 created - Status: ACTIVE
-[10:06:09] Order ID #4 for vip customer completed by Bot #2 in 10 seconds - Status: COMPLETE
-[10:06:12] Bot #5 destroyed while IDLE
-[10:06:13] Order ID #1 for normal customer completed by Bot #3 in 10 seconds - Status: COMPLETE
-[10:06:14] Bot #4 destroyed while PROCESSING
+[15:29:58] Created vip Order #1 - Status: PENDING
+[15:29:58] Created normal Order #2 - Status: PENDING
+[15:29:58] Created normal Order #3 - Status: PENDING
 
 Final Status:
-- Total Orders Processed: 4 (2 VIP, 2 Normal)
-- Orders Completed: 3
-- Active Bots: 3
-- Pending Orders: 1
+- Total Orders Processed: 3 (1 VIP, 2 Normal)
+- Orders Completed: 0
+- Active Bots: 0
+- Pending Orders: 3
